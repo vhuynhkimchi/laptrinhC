@@ -21,38 +21,39 @@ void nhapMang()
 }
 void inMang()
 {
+	printf("\nMang da nhap la: ");
 	for(int i=0; i<N; i++)
 	{
-		printf("\nMang da nhap la: %d", A[i]);
+		printf("%d ", A[i]);
 	}
 }
-float tinhTBC(int x[], int N)
+void tinhTBC()
 {
 	float TongTBC=0;
 	for(int i=0; i<N; i++){
 	
-	TongTBC=(TongTBC+x[i])/N;
+	TongTBC=(TongTBC+A[i])/N;
 }
-   return TongTBC;	
+   printf("\nTong TBC la: %f", TongTBC);	
 }
-float tinhTBCduong(int x[], int N)
+void tinhTBCduong()
 {
 	float Tong=0;
 	int soluongsoduong;
 	for (int i=0; i<N; i++)
 	{
-		if(x[i]>0){
-			Tong=Tong+x[i];
+		if(A[i]>0){
+			Tong=Tong+A[i];
 			soluongsoduong++;
 		}
 	}
-	return Tong/soluongsoduong;
+	printf("\nTong TBC la: %f", Tong/soluongsoduong);
 }
 int main()
 {
 	NhapN();
 	nhapMang();
 	inMang();
-	tinhTBC(A,N);
-	tinhTBCduong(A,N);
+	tinhTBC();
+	tinhTBCduong();
 }
