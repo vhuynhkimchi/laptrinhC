@@ -1,3 +1,6 @@
+//Tinh TBC cac so chan tren duong cheo phu
+//Tim GTNN tren cheo chinh
+//Nhap c tu ban phim va in ra duong cheo chinh la phan tu c con xung quanh bang 0
 #include<stdio.h>
 #define maxd 5
 #include<limits.h>
