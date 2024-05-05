@@ -1,3 +1,6 @@
+//Tim GTNN tren cheo chinh
+//Co bao nhieu phan tu cung nho nhat tren cheo chinh
+//Nhap d tu ban phim kiem tra dong do da sap sap giam dan chua
 #include<stdio.h>
 #define maxd 10
 #include<limits.h>
