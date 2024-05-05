@@ -1,3 +1,5 @@
+//Tim so GTNN duoi cheo chinh
+//Tim So hoan hao tai hang chan cot le
 #include<stdio.h>
 #include<limits.h>
 #define maxd 5
@@ -37,16 +39,16 @@ void inphantu()
 				printf("\n");
 		}
 }
-//void duoidcc(int m[][maxd], int n){
-//	for(int i=0; i<n; i++){
-//		for(int j=0; j<n; j++){
-//			if(i>j){
-//				printf("%d ",a[i][j]);
-//		}
-//	}
-//}
-//printf("\n");
-//}
+void duoidcc(int m[][maxd], int n){
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n; j++){
+			if(i>j){
+				printf("%d ",a[i][j]);
+		}
+	}
+}
+printf("\n");
+}
 
 int gtnn(int m[][maxd], int n){
 	int min=INT_MAX;//so nguyen tan cung lon = 2ty may
@@ -91,9 +93,9 @@ int main(){
 	nhapso_hang_cot();
 	nhapphantu();
 	inphantu();
-//	printf("Duoi duog cheo chinh: ");
-//	duoidcc(a,n);
-//	printf("gia tri nho nhat:%d",gtnn(a,n));
+	// printf("Duoi duog cheo chinh: ");
+	// duoidcc(a,n);
+	printf("gia tri nho nhat:%d",gtnn(a,n));
 	timshh(a,n);
 	//printf("Hang chan cot le: %d", chanle());
 }
