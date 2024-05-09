@@ -1,3 +1,7 @@
+//Dem do dai cua chuoi
+//Dem nguyen am
+//Dao nguoc
+//Sap xep ky tu hoa thuong
 #include<stdio.h>
 #include<string.h>
 
