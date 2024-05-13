@@ -1,87 +1,56 @@
 #include<stdio.h>
 #include<string.h>
+#define maxd 100
+char s[maxd] = "thang gieng la thang an choi, thang hai co bac, thang ba ruoi che";
 
-char s[]="toi la sinh vien";
-int len;
-
-void Trich(char source[], int num_char)
-{
-	for(int i=0; i<num_char; i++){
-		printf("%c",s[i]);
-	}
-}
-
-void Nguyenam(char chuoi[])
-{
-	char a[]="ueoai";
-	int dem=0;
-	int len=strlen(chuoi);
-	for(int i = 0; i < len; i++)
-	{
-		for(int j=0; j<strlen(a); j++){
-			if(chuoi[i] == a[j] )
-			{
-				chuoi[i]-=32;
-				dem++;
-			}
-		}
-	}
-	printf("\nco %d nguyen am va viet hoa ng.am la %s",dem,chuoi);
-	
-}
-//void Xoa(char chuoi[])
-//{
-//	int vt;
-//	int leng = strlen(chuoi);
-//	int dem = 0;
-//	for(int i = 0; i < leng; i++)
-//	{
-//		dem++;
-//		vt=dem-2;
-//		while(dem < vt)
-//		{
-//			if(s[i] != ' ')
-//			{
-//				break;
-//			}
-//			else
-//			{
-//				dem++;
-//			}
-//		}
-//	}
-//	printf("\nChuoi sau khi xoa 2 tu cuoi la: %d",s);
-//}
-void Xoa(char chuoi[])
+int DemNA(char m[maxd])
 {
 	int dem = 0;
-	int len = strlen(chuoi);
-	for(int  i =0; i < len; i++)
+	char a[maxd] = "ueoaiUEOAI";
+	for(int i = 0; i < strlen(m); i++)
 	{
-		if(chuoi[i] == ' ')
+		for(int j = 0; j < strlen(a); j++)
 		{
+			if(m[i] == a[j])
 			dem++;
-			if(dem == 2)
-			{
-				printf("%d",chuoi);
-			}
-			else
-			{
-				break;
-			}
 		}
-		
 	}
-	printf("\nChuoi sau khi xoa la:%d",chuoi);
+	return dem;
+}
+void tudainhat()
+{
+	int i;
+	int a[maxd];
+	int dem = 0;
+	int len = 0;
+	while(s[i] != '\0' )
+	{
+		if(s[i] != ' ')
+		{
+			len++;
+		}
+		else
+		{
+			a[dem++] = len;
+			len = 0;
+		}
+		i++;
+	}
+	int max = 0;
+	for(int i = 0; i < dem; i++)
+	{
+		if(a[i] > max)
+		{
+			max = a[i];
+		}
+	}
+	printf("\nTu dai nhat trong chuoi co %d ky tu",max);
 }
 int main()
 {
-	//printf("Nhap chuoi:");
-	//gets(s);
+	printf("Chuoi da nhap la :");
 	printf("%s",s);
-	printf("\nTrich chuoi: ");
-	Trich(s,6);
-	Nguyenam(s);
-	Xoa(s);
+	printf("\nCo %d nguyen am trong chuoi.", DemNA(s));
+	tudainhat();
 }
 
