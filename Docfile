@@ -1,0 +1,51 @@
+#include <stdio.h>
+#define MAX 100
+#define INPUT "input.inp"
+
+int n;
+int a[MAX];
+FILE *fp;
+
+void inmang(int m[MAX], int size){
+    for(int i=0; i<size; i++){
+        printf("%d  ",m[i]);
+    }
+}
+
+void readfile(){
+    fp = fopen(INPUT,"r");
+    if(fp == NULL){
+        printf("File not found");
+        return;
+    }
+    fscanf(fp,"%d",&n);
+    printf("n=%d",n);
+    for(int i=0; i<n; i++){
+        fscanf(fp,"%d",&a[i]);
+    }
+    printf("\nmang: ");inmang(a,n);
+    fclose(fp);
+}
+
+void writefile()
+{
+    fp = fopen(INPUT,"w");
+    if(fp == NULL)
+    {
+        printf("File not found");
+        return;
+    }
+    for(int i = 0; i < n; i++)
+    {
+        fscanf(fp,"%d",&a[i]);
+    }
+    printf("\nmang: ");
+    inmang(a,n);
+    fclose(fp);
+}
+int main()
+{
+    readfile();
+    writefile();
+    return 0;
+}
